@@ -8,7 +8,7 @@ PlatON目前有2个公有网络，一个是还未正式上线的、独立运行�
 
 在加入PlatON公有网络前请确保服务器本地具备以下条件：
 
-1. 已经按照[PlatON安装指南](/zh-cn/Node/[Chinese-Simplified]-安装节点.md)安装好PlatON环境或编译好PlatON可执行文件'platon'和'keytool'。
+1. 已经按照[PlatON安装指南](/zh-cn/Node/_[Chinese-Simplified]-安装节点.md)安装好PlatON环境或编译好PlatON可执行文件'platon'和'keytool'。
 2. 已经按照[节点密钥](/zh-cn/Node/_[Chinese-Simplified]-钱包文件与节点密钥.md#节点密钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
 
 
@@ -22,14 +22,14 @@ PlatON目前有2个公有网络，一个是还未正式上线的、独立运行�
 
 任何人、任何组织都可以加入PlatON测试网络贝莱世界。
 
-执行以下命令即可启动验证节点加入贝莱世界：
+执行以下命令即可`启动验证节点`加入贝莱世界：
 
 ```bash
-./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 127.0.0.1 --syncmode "full"
+nohup ./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 127.0.0.1 --syncmode "full" > ./data/platon.log 2>&1 &
 ```
-如果要启动归档节点加入贝莱世界，请执行以下命令：
+如果要`启动归档节点加`入贝莱世界，请执行以下命令：
 ```bash
-./platon --identity platon --datadir ./data --port 16789 --db.nogc --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 127.0.0.1 --syncmode "full"
+nohup ./platon --identity platon --datadir ./data --port 16789 --db.nogc --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 127.0.0.1 --syncmode "full" > ./data/platon.log 2>&1 &
 ```
 
 ***提示：***

@@ -1,3 +1,4 @@
+归档节点会保存完整state和receipt的历史数据，非归档节点会定时清除state和receipt的历史数据，只能保存最近10个块的相应数据，如节点有查询历史数据的需求，节点在启动时需要开启归档模式。
 
 ## 概述
 节点默认启动时会定时清除state和receipt的历史数据，只能保存最近10个块的相应数据。
@@ -25,7 +26,7 @@ Error: missing trie node f7e7f0f53eb6dc23d18f8285553c916fdd410e484b611d53883e2a0
 >
 > 归档模式的开启相对不开启会使磁盘的占用量提高约3倍左右。
 
-本节描述如何操作成为验证节点。
+本节描述如何操作成为归档节点。
 
 ##  操作步骤
 
@@ -38,7 +39,7 @@ Error: missing trie node f7e7f0f53eb6dc23d18f8285553c916fdd410e484b611d53883e2a0
 
 安装ntp，并且设置开机自启
 ```bash
-apt-get -y install ntp  &&  systemctl enable ntp
+sudo apt-get -y install ntp  &&  sudo systemctl enable ntp && sudo systemctl start ntp
 ```
 
 #### 查看同步情况
@@ -48,8 +49,7 @@ ntpq -p
 ```
 返回
 
-![ntpq返回](时钟同步.assets/ntpq.png)
-
+<img src="https://platonnetwork.github.io/Docs/zh-cn/Node/时钟同步.assets/ntpq.png" alt="时钟同步"/>
 
 属性说明：
 
@@ -78,7 +78,7 @@ remote前面符号的说明:
   ( * ）当前作为优先主同步对象的远程节点或服务器
 
 ###  安装节点
-节点服务器须为Ubuntu 18.04，请按照[安装节点](zh-cn/Node/[Chinese-Simplified]-安装节点.md)中Ubuntu的部分进行操作。
+节点服务器须为Ubuntu 18.04，请按照[安装节点](zh-cn/Node/_[Chinese-Simplified]-安装节点.md)中Ubuntu的部分进行操作。
 
 ### 生成节点密钥与共识密钥
 节点在启动时需要节点公私钥与BLS公私钥，BLS公私钥在共识协议中将被使用。

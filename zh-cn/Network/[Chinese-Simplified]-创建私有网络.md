@@ -4,7 +4,7 @@
 
 `PlatON`支持单节点模式和集群模式运行私有网络， 同样，搭建私有网络前请确保服务器本地具备以下条件：
 
-1. 已经按照[PlatON安装指南](/zh-cn/Node/[Chinese-Simplified]-安装节点.md)安装好PlatON环境。
+1. 已经按照[PlatON安装指南](/zh-cn/Node/_[Chinese-Simplified]-安装节点.md)安装好PlatON环境。
 2. 已经按照[节点密钥](/zh-cn/Node/_[Chinese-Simplified]-钱包文件与节点密钥.md#节点密钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
 
 
@@ -29,7 +29,7 @@
 			"period": 20000,
 			"validatorMode": "ppos"
 		},
-		"genesisVersion": 2048
+		"genesisVersion": 2304
 	},
 	"economicModel": {
 		"common": {
@@ -122,7 +122,7 @@ Successfully wrote genesis state
 Ubuntu下可以以nohup方式启动程序：
 
 ```
-nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey &
+nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey & > ./data/platon.log 2>&1 &
 ```
 
 当shell中提示nohup成功后再按下一次回车，确保不会因为误关闭终端引起进程退出。
@@ -155,7 +155,7 @@ mkdir data0 data1
 
 **2.生成密钥对**
 
-按照[节点密钥](/zh-cn/Node/_[Chinese-Simplified]-钱包文件与节点密钥.md#节点密钥)章节生成了2对节点私钥和节点BLS私钥。
+按照[节点密钥](/zh-cn/Node/_[Chinese-Simplified]-钱包文件与节点密钥.md#节点密钥)章节生成2对节点私钥和节点BLS私钥。
 
 分别将2个节点的nodekey和blskey保存到'data0'和'data1'
 

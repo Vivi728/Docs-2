@@ -21,7 +21,7 @@ Ubuntu编译环境要求：
 ##### 获取源码
 
 ```
-git clone  -b release-0.8.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive 
+git clone -b release-0.10.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive 
 ```
 
 ##### 编译
@@ -29,6 +29,7 @@ git clone  -b release-0.8.0 https://github.com/PlatONnetwork/PlatON-Go.git --rec
 ```bash
 cd PlatON-Go;
 find ./build -name "*.sh" -exec chmod u+x {} \;
+sudo apt install llvm g++ libgmp-dev libssl-dev ;
 make all;
 ```
 
@@ -83,7 +84,7 @@ Windows编译环境需要符合以下条件：
 
 ```
 cd src/github.com/PlatONnetwork/;
-git clone -b release-0.8.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone -b release-0.10.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 ##### 编译
@@ -104,15 +105,14 @@ cd PlatON-Go
 由于编译依赖bls库，需要把PlatON-Go\crypto\bls\bls_win\lib配置到系统的path环境变量里面,
 否则会报`exit status 3221225781`错误。
 
-在源码目录`PlatON-Go`下执行以下编译命令可生成`platon`、`keytool`、`ctool`可执行文件，如下：
+在源码目录`PlatON-Go`下执行以下编译命令可生成`platon`、`keytool`可执行文件，如下：
 
 ```
 go run build/ci.go install ./cmd/platon
 go run build/ci.go install ./cmd/keytool
-go run build/ci.go install ./cmd/ctool
 ```
 
-编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`keytool`和`ctool`可执行文件，将此三个可执行文件拷贝到自己工作目录运行即可。
+编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`keytool`可执行文件，将这两个可执行文件拷贝到自己工作目录运行即可。
 
 > 重复编译会覆盖之前生成的可执行文件。
 
@@ -121,6 +121,12 @@ go run build/ci.go install ./cmd/ctool
 ## Ubuntu下PPA源安装
 
 目前只支持Ubuntu 18.04.1以上版本的PPA，请选择正确的Ubuntu版本。
+
+添加PPA源工具：
+
+```bash
+if ! command -v add-apt-repository >/dev/null 2>&1; then  sudo apt-get update && sudo apt-get install -y software-properties-common; fi;
+```
 
 添加PPA：
 
@@ -137,7 +143,7 @@ sudo apt-get update
 安装PlatON：
 
 ```bash
-sudo apt-get install platon0.8.0
+sudo apt-get install platon0.10.1
 ```
 
 安装完成后，可执行程序将安装到： `/usr/bin/`。

@@ -29,8 +29,8 @@
 
 | 系统 | 合约级别 | 合约大小 | 消耗Gas | Gas 单价 | 能量损耗 | 备注 |
 |:---|:---|:---|:---|:---|:---|:---|
-| PlatON  | 大型合约 | 4.45 kb | 85849 | 5,000,000,000 `VON` | 2764115  `gVON` | 0.002764115 `LAT` |
-| Ethereum  | 大型合约 | 4.45 kb | 155149 | 5,000,000,000 `wei` | 6410855  `Gwei` | 0.006410855 `ETH` |
+| PlatON  | 大型合约 | 4.45 kb | 552823 | 5,000,000,000 `VON` | 2764115  `gVON` | 0.002764115 `LAT` |
+| Ethereum  | 大型合约 | 4.45 kb | 1282171 | 5,000,000,000 `wei` | 6410855  `Gwei` | 0.006410855 `ETH` |
 
 
 ## 小型合约示例
@@ -86,7 +86,7 @@ PlatON
 
 **示例代码**
 
-[点击查看微博客账户合约](https://github.com/luo-dahui/Docs/blob/master/zh-cn/Development/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/account.sol)
+[点击查看微博客账户合约](https://github.com/PlatONnetwork/Docs/blob/master/zh-cn/Development/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/account.sol)
 
 
 字节码
@@ -119,7 +119,7 @@ PlatON
 
 **示例代码**
 
-[点击查看ERC20标准的智能合约](https://github.com/luo-dahui/Docs/blob/master/zh-cn/Development/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/token.sol)
+[点击查看ERC20标准的智能合约](https://github.com/PlatONnetwork/Docs/blob/master/zh-cn/Development/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/token.sol)
 
 
 字节码
